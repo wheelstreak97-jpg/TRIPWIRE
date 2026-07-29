@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #12151b;
+  --surface: #1b2029;
+  --text-primary: #edeef0;
+  --text-secondary: #8b93a1;
+  --state-safe: #3ecf8e;
+  --state-soon: #ffb020;
+  --state-urgent: #ff4d4f;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  @apply bg-bg text-text-primary font-body antialiased;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-display;
+  line-height: 1.2;
+}
+
+::selection {
+  background: rgba(62, 207, 142, 0.25);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--state-safe);
+  outline-offset: 2px;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fuse-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes pulse-urgent {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.animate-toast-in {
+  animation: toast-in 0.25s ease-out;
+}
+
+.fuse-fill {
+  transform-origin: left;
+  animation: fuse-fill 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pulse-urgent {
+  animation: pulse-urgent 1.6s ease-in-out infinite;
+}
+
+@keyframes skeleton {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #1b2029 25%, #222834 50%, #1b2029 75%);
+  background-size: 200% 100%;
+  animation: skeleton 1.4s ease infinite;
+  @apply rounded-card;
+}

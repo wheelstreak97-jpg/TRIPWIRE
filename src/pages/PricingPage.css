@@ -1,0 +1,92 @@
+.pricing-page {
+  min-height: 100vh;
+  padding: 80px 24px 120px;
+  background: #08080f;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pricing-page__hero {
+  text-align: center;
+  max-width: 560px;
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.pricing-page__eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6366f1;
+  margin: 0;
+}
+
+.pricing-page__title {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0;
+  background: linear-gradient(135deg, #fff 40%, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pricing-page__subtitle {
+  font-size: 17px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.pricing-page__current-notice {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: #22c55e14;
+  border: 1px solid #22c55e40;
+  color: #4ade80;
+  font-size: 14px;
+}
+
+.pricing-page__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 800px;
+  width: 100%;
+  padding-top: 16px;
+}
+
+.pricing-page__loading {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+.pricing-page__spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #1e1e2e;
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.pricing-page__footer {
+  margin-top: 40px;
+  font-size: 13px;
+  color: #4b5563;
+  text-align: center;
+}
